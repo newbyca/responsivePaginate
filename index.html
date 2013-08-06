@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsivePaginate.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Responsive Paginate by newbyca</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Responsive Paginate</h1>
+          <h2>Responsive Paginate turns a bunch of HTML anchor tags into a <a href="http://en.wikipedia.org/wiki/Responsive_web_design">responsive</a> pagination UI.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/newbyca/responsivePaginate/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/newbyca/responsivePaginate/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/newbyca/responsivePaginate" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+
+<p>Responsive Paginate turns a bunch of HTML anchor tags that might look like this:</p>
+
+<div>
+  <a href="index.html?p=1">1</a>
+  <a href="index.html?p=2">2</a>
+  <a href="index.html?p=3">3</a>
+  <a href="index.html?p=4">4</a>
+  <a href="index.html?p=5">5</a>
+  <a href="index.html?p=6">6</a>
+  <a href="index.html?p=7">7</a>
+  <a href="index.html?p=8">8</a>
+  <a href="index.html?p=9">9</a>
+  <a href="index.html?p=10">10</a>
+  <a href="index.html?p=11">11</a>
+  <a href="index.html?p=12">12</a>
+  <a href="index.html?p=13">13</a>
+  <a href="index.html?p=14">14</a>
+  <a href="index.html?p=15">15</a>
+  <a href="index.html?p=16">16</a>
+  <a href="index.html?p=17">17</a>
+  <a href="index.html?p=18">18</a>
+  <a href="index.html?p=19">19</a>
+  <a href="index.html?p=20">20</a>
+  <a href="index.html?p=21">21</a>
+  <a href="index.html?p=22">22</a>
+  <a href="index.html?p=23">23</a>
+  <a href="index.html?p=24">24</a>
+  <a href="index.html?p=25">25</a>
+  <a href="index.html?p=26">26</a>
+  <a href="index.html?p=27">27</a>
+  <a href="index.html?p=28">28</a>
+  <a href="index.html?p=29">29</a>
+  <a href="index.html?p=30">30</a>
+  <a href="index.html?p=31">31</a>
+  <a href="index.html?p=32">32</a>
+  <a href="index.html?p=33">33</a>
+  <a href="index.html?p=34">34</a>
+  <a href="index.html?p=35">35</a>
+</div>
+<br />
+
+<p>...into a responsive pagination UI that looks like this:</p>
+
+<div class="responsivePaginate">
+  <a href="index.html?p=1">1</a>
+  <a href="index.html?p=2">2</a>
+  <a href="index.html?p=3">3</a>
+  <a href="index.html?p=4">4</a>
+  <a href="index.html?p=5">5</a>
+  <a href="index.html?p=6">6</a>
+  <a href="index.html?p=7">7</a>
+  <a href="index.html?p=8">8</a>
+  <a href="index.html?p=9">9</a>
+  <a href="index.html?p=10">10</a>
+  <a href="index.html?p=11">11</a>
+  <a href="index.html?p=12">12</a>
+  <a href="index.html?p=13">13</a>
+  <a href="index.html?p=14">14</a>
+  <a href="index.html?p=15">15</a>
+  <a href="index.html?p=16">16</a>
+  <a href="index.html?p=17">17</a>
+  <a href="index.html?p=18">18</a>
+  <a href="index.html?p=19">19</a>
+  <a href="index.html?p=20">20</a>
+  <a href="index.html?p=21">21</a>
+  <a href="index.html?p=22">22</a>
+  <a href="index.html?p=23">23</a>
+  <a href="index.html?p=24">24</a>
+  <a href="index.html?p=25">25</a>
+  <a href="index.html?p=26">26</a>
+  <a href="index.html?p=27">27</a>
+  <a href="index.html?p=28">28</a>
+  <a href="index.html?p=29">29</a>
+  <a href="index.html?p=30">30</a>
+  <a href="index.html?p=31">31</a>
+  <a href="index.html?p=32">32</a>
+  <a href="index.html?p=33">33</a>
+  <a href="index.html?p=34">34</a>
+  <a href="index.html?p=35">35</a>
+</div>
+<br />
+<p>Go ahead, click the page links, resize your browser and watch responsive paginate do its thing :)</p>
+<br />
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<h4>
+<a name="add-the-style-sheet-to-your-html-documents-head" class="anchor" href="#add-the-style-sheet-to-your-html-documents-head"><span class="octicon octicon-link"></span></a>Add the style sheet to your HTML document's head:</h4>
+
+<pre><code>&lt;head&gt;
+  ...
+  &lt;link href="responsivePaginate.css" rel="stylesheet" media="screen"&gt;
+&lt;/head&gt;
+</code></pre>
+
+<h4>
+<a name="in-the-body-of-your-html-document-format-your-page-links-like-this" class="anchor" href="#in-the-body-of-your-html-document-format-your-page-links-like-this"><span class="octicon octicon-link"></span></a>In the body of your HTML document format your page links like this:</h4>
+
+<pre><code>&lt;div class="responsivePaginate"&gt;
+  &lt;a href="/view/?page=1"&gt;1&lt;/a&gt;
+  &lt;a href="/view/?page=2"&gt;2&lt;/a&gt;
+  &lt;a href="/view/?page=3" data-selected="true"&gt;3&lt;/a&gt;
+  ...
+  &lt;a href="/view/?page=n"&gt;n&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Using numbers isn't required, you can use whatever labels you want. To tell responsivePaginate which page should be marked selected, add 'data-selected="true"' to its anchor tag.</p>
+
+<h4>
+<a name="bootstrap-the-responsivepaginate-script-at-the-end-of-your-html-document-like-this" class="anchor" href="#bootstrap-the-responsivepaginate-script-at-the-end-of-your-html-document-like-this"><span class="octicon octicon-link"></span></a>Bootstrap the responsivePaginate script at the end of your HTML document like this:</h4>
+
+<pre><code>...
+&lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="responsivePaginate.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+
+    $(document).ready(function () {
+        $(".responsivePaginate").responsivePaginate();
+    });
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+
+        <footer>
+          Responsive Paginate is maintained by <a href="https://github.com/newbyca">newbyca</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="javascripts/responsivePaginate.js"></script>
+    <script src="javascripts/url.min.js"></script>
+    <script src="javascripts/url-x.js"></script>
+    <script>
+
+        $(document).ready(function () {
+          markUpSelectedPage();
+          $(".responsivePaginate").responsivePaginate();
+        });
+
+        function markUpSelectedPage(){
+          var p = url.current.q.getInt("p", 1);
+          var a = $('.responsivePaginate > a[href="index.html?p=' + p + '"]');
+          a.attr('data-selected', 'true');
+        }
+
+    </script>
+  </body>
+</html>
