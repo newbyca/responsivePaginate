@@ -1,0 +1,39 @@
+.responsivePaginate
+{
+	padding: .75em 0 .75em 0;
+	font-size: 1.00em;
+	background-color: #ddf;
+	white-space: nowrap;
+	text-align: center;
+}
+.responsivePaginate span, .responsivePaginate div, .responsivePaginate a{
+    padding: .20em 1em .20em 1em;
+    margin: 0 .25em 0 .25em;
+    visibility: hidden;
+}
+.responsivePaginate span, .responsivePaginate div
+{
+	display: inline;
+    color: #629aca;
+    text-shadow: 1px 1px 0px #eef;
+}
+.responsivePaginate a
+{
+	color: #225a9a;
+    text-decoration: none;
+    background-color: #eef;
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeff 100%);
+
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -o-border-radius: 4px 4px 4px 4px;
+    -ms-border-radius: 4px 4px 4px 4px;
+    -khtml-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+.responsivePaginate a:hover
+{
+    background-color: #fff;
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+	color: #99f;
+}
