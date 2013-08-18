@@ -13,15 +13,24 @@ jQuery.fn.responsivePaginate = function () {
 	    this.toHtml = function() {
 	        var html = "<a href='" + this.links.eq(0).attr("href") + "' style='visibility: visible;'>|&lt;</a>";
 	        html = this.appendHtml(html, this.lowerSkip, this.lowerTo);
-	        html += "<div style='visibility: visible;'>...</div>";
-	        html = this.appendHtml(html, this.upperSkip, this.upperTo);
+          if(this.useEllipsis){
+            html += "<div style='visibility: visible;'>...</div>";
+            html = this.appendHtml(html, this.upperSkip, this.upperTo);
+          }
 	        html += "<a href='" + this.links.eq(this.linkCount - 1).attr("href") + "' style='visibility: visible;'>&gt;|</a>";
 	        this.$this.html(html);
 	    }
 
 	    this.reset = function () {
 	        this.pagerButtons = this.calculatePagerButtons();
-	        this.ellipsisPoint = (this.selectedPage <= this.linkCount / 2)
+          this.useEllipsis = this.pagerButtons <= this.linkCount;
+          if(!this.useEllipsis){
+            this.lowerSkip = 0;
+            this.lowerTo = this.linkCount;
+            return;
+          }
+
+          this.ellipsisPoint = (this.selectedPage <= this.linkCount / 2)
 	            ? Math.floor(3 * this.pagerButtons / 4)
 	            : Math.ceil(this.pagerButtons / 4)
 	        ;
@@ -82,6 +91,7 @@ jQuery.fn.responsivePaginate = function () {
         this.linkCount = this.links.length;
         this.selectedPage = this.findSelectedPage();
         this.pagerButtons = 0;
+        this.useEllipsis = false;
         this.ellipsisPoint = 0;
         this.lowerSkip = 0;
         this.lowerTo = 0;
