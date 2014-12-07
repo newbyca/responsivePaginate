@@ -11,11 +11,11 @@ jQuery.fn.responsivePaginate = function () {
     function responsivePaginate($container){
 
 	    this.toHtml = function() {
-	        var html = "<a href='" + this.links.eq(0).attr("href") + "' style='visibility: visible;'>|&lt;</a>";
+	        var html = "<a href='" + this.links[0].href + "' style='visibility: visible;'>|&lt;</a>";
 	        html = this.appendHtml(html, this.lowerSkip, this.lowerTo);
 	        html += "<div style='visibility: visible;'>...</div>";
 	        html = this.appendHtml(html, this.upperSkip, this.upperTo);
-	        html += "<a href='" + this.links.eq(this.linkCount - 1).attr("href") + "' style='visibility: visible;'>&gt;|</a>";
+	        html += "<a href='" + this.links[this.linkCount - 1].href + "' style='visibility: visible;'>&gt;|</a>";
 	        this.$this.html(html);
 	    }
 
@@ -42,16 +42,16 @@ jQuery.fn.responsivePaginate = function () {
 	    this.appendHtml = function (html, from, to) {
 	        for (var i = from; i < to; i++)
 	            if (i == (this.selectedPage - 1))
-	                html += "<div style='visibility: visible;'>" + this.links.eq(i).html() + "</div>";
+	                html += "<div style='visibility: visible;'>" + this.links[i].html + "</div>";
 	            else
-	                html += "<a href='" + this.links.eq(i).attr("href") + "' style='visibility: visible;'>" + this.links.eq(i).html() + "</a>";
+	                html += "<a href='" + this.links[i].href + "' style='visibility: visible;'>" + this.links[i].html + "</a>";
 	        return html;
 	    }
 
 	    this.measureWidest = function () {
 	        var result = 0;
 	        for (var i = 0, max = this.links.length; i < max; i++)
-	            result = Math.max(result, this.links.eq(i).outerWidth(true));
+	            result = Math.max(result, this.links[i].outerWidth);
 	        result = Math.floor(result);
 	        return result;
 	    }
@@ -59,8 +59,7 @@ jQuery.fn.responsivePaginate = function () {
 	    this.findSelectedPage = function () {
 	        for (var i = 0, max = this.links.length; i < max; i++)
 	        {
-				var selected = this.links.eq(i).attr("data-selected");
-	            if (selected && (selected.toLowerCase() == "true"))
+	            if (this.links[i].selected)
 	                return i + 1;
 	        }
 	        return 1;
@@ -76,8 +75,28 @@ jQuery.fn.responsivePaginate = function () {
 	        return Math.floor(this.$this.width());
 	    }
 
+	    this.getLinks = function(anchorTags){
+	    	var results = [];
+	        for (var i = 0, max = anchorTags.length; i < max; i++)
+	        {
+	        	var anchor = anchorTags.eq(i);
+	        	var selected = anchor.attr("data-selected");
+	        	if(selected && (selected.toLowerCase() == "true"))
+		            selected = true;
+		        else
+		        	selected = false;
+	            var link = {};
+        		link.selected = selected;
+        		link.outerWidth = anchor.outerWidth(true);
+        		link.href = anchor.attr("href");
+        		link.html = anchor.html();
+        		results.push(link);
+	        }
+	        return results;
+	    }
+
 	    this.$this = $container;
-        this.links = this.$this.children("a");
+        this.links = this.getLinks(this.$this.children("a"));
         this.widest = this.measureWidest();
         this.linkCount = this.links.length;
         this.selectedPage = this.findSelectedPage();
@@ -93,8 +112,7 @@ jQuery.fn.responsivePaginate = function () {
         $(window).resize($.proxy(
         	function () { this.reset(); this.toHtml();}, 
         	this
-        	));
-
+        ));
     }
 
 };
